@@ -11,18 +11,17 @@ python -m pip install Django
 ## Create a project
 * Run the following command to create a Django project
 ```bash
-django-admin startproject DjangoTraining
+django-admin startproject DjangoTraining .
 ```
 * It will create a directory structure like the following
 ```bash
+manage.py
 DjangoTraining/
-    manage.py
-    DjangoTraining/
-        __init__.py
-        settings.py
-        urls.py
-        asgi.py
-        wsgi.py
+    __init__.py
+    settings.py
+    urls.py
+    asgi.py
+    wsgi.py
 ```
 * The folder created with the project name contains the code and configuration to manage the project and its applications
 
@@ -101,7 +100,7 @@ urlpatterns = [
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('/', views.index, name="index"),
+    path('', views.index, name="index"),
 ]
 ```
 
