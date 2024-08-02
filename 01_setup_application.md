@@ -123,7 +123,7 @@ def index(request):
 
 ## Templates to render views in application
 * Template files should be present in the `templates` folder of the application
-* Variabled passed from the view function can be rendered in HTML using jinja templating as shown in the below example
+* Variables passed from the view function can be rendered in HTML using jinja templating as shown in the below example
 
 ```html
 <!--MainSite/templates/index.html.j2-->
