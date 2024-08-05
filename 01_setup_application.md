@@ -107,10 +107,14 @@ urlpatterns = [
 ## Create a view function to render content
 * A view function can take in the HTTP request and send the response
 * The response can be plain text, data rendered in a jinja HTML template, JSON etc.
+* To send plain text use `HttpResponse`
+* To send a HTML webpage use `render`. Data to be injected in the HTML can be provided in the `render` function.
+* To send JSON use `JsonResponse`
+* To send list of JSON objects, use `JsonResponse` with `safe=False`
 
 ```py
 # MainSite/views.py
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -119,6 +123,8 @@ def index(request):
     return render(request, 'index.html.j2', context)
     # return render(request, 'App2/index.html.j2', context)
     # return HttpResponse("hello World")
+    # return JsonResponse({"name":"John"})
+    # return JsonResponse([{"name":"John"},{"name":"Glen"}], safe=False)
 ```
 
 ## Templates to render views in application
